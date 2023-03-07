@@ -1,13 +1,24 @@
-body, html {
-    height: 100%;
+* {
+    /* height: 100%; */
+    font-family: 'Lilita One', cursive;
 }
+
+:root {
+  --color1: #84A98C;
+  --color2:  #354f52;
+  --color3: #ffb5a7;
+  --color4: #CAD2C5;
+  --color5: #b9c6ae;
+  --white: #fff; 
+  --smallwidth: 50%;
+  }
 
 /* The hero image */
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image. This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./imgs/ice-cream-dessert-ice-cold.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./imgs/alexander-grey-YaajxnfGeCk-unsplash.jpg");
   /* Set a specific height */
-  height: 50%;
+  height: 33vh;
   /* Position and center the image to scale nicely on all screens */
   background-position: center;
   background-repeat: no-repeat;
@@ -23,4 +34,18 @@ body, html {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+}
+
+/* Info Grid in Middle */
+
+.info-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 6px;
+  background-color: white;
+  margin: 10px;
+  border: 3px solid orange;
+  border-radius: 15px;
+  color: black;
 }

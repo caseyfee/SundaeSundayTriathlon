@@ -1,3 +1,4 @@
+// Changing to participants page with projects and funding info
 const router = require('express').Router();
 const { Project } = require('../../models');
 const withAuth = require('../../utils/auth');

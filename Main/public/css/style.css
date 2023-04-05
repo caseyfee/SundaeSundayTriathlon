@@ -41,7 +41,7 @@ header, .project:not(:last-child) {
 /* The hero image */
 .hero-image {
 /* Use "linear-gradient" to add a darken background effect to the image. This will make the text easier to read */
-background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./imgs/alexander-grey-YaajxnfGeCk-unsplash.jpg");
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/SundaeSundayTriathlon/imgs/alexander-grey-YaajxnfGeCk-unsplash.jpg");
 /* Set a specific height */
 height: 33vh;
 /* Position and center the image to scale nicely on all screens */

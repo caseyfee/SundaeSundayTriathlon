@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vote for your favorite item</title>
+    <script src="/Main/views/voting.js"></script>
+
+  </head>
+  <body>
+    <h1>Vote for your favorite item:</h1>
+    <form id="votingForm">
+      <input type="checkbox" name="vote" value="item1" id="item1NutFree">
+      <label for="item1">Nut Free</label><br>
+      <input type="checkbox" name="vote" value="item2" id="item2DairyFree">
+      <label for="item2">Dairy Free</label><br>
+      <input type="checkbox" name="vote" value="item3" id="item3GlutenFree">
+      <label for="item3">Gluten Free</label><br>
+      <input type="submit" value="Vote">
+    </form>
+    <h2>Results:</h2>
+    <p id="item1-votes">Nut Free: 0 votes</p>
+    <p id="item2-votes">Dairy Free: 0 votes</p>
+    <p id="item3-votes">Gluten Free: 0 votes</p>
+  </body>
+</html>
+
+<!-- Should I even have the results storing in a database? -->
+<!-- Should I just have them be emailed to me through mailto? -->
+
+
+
+<!-- <div class="article" data-itemid="427">
+    <h1>Please vote for what ice cream and toppings you want at the end of the race!</h1>
+    <p>Strawberry</p>
+    <a href="voteup"   class="vote up"  >Yes I want this</a>
+    <p>Chocolate</p>
+    <a href="voteup"   class="vote up"  >Yes I want this</a>
+    <p>Vanilla</p>
+    <a href="voteup"   class="vote up"  >Yes I want this</a>
+    <p>Sprinkles</p>
+    <a href="voteup"   class="vote up"  >Yes I want this</a> -->
+    <!-- <a href="votedown" class="vote down">Down</a> -->
+    <!-- ...the contents of the item... -->
+    <!-- </div> -->

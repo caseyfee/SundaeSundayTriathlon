@@ -27,73 +27,22 @@
       <h1>Come to the First Annual Sunday Sundae Triathlon!!</h1>
       <p>A choose your own adventure day with a sweet treat at the end!</p>
     </div>
+    {{!-- NEED TO LINK HEADER HERE --}}
   </div>
    <!-- Add a navbar with Voting page (this should re-direct to login page if not logged in), 
     participant page (this should re-direct to login page if not logged in) , a link to a generic advice site for triathlons? 
     add bar to shortcut to headers-->
 
-{{!-- All these info-boxes should be a seperate partial, and what the main page is directed to right away --}}
-{{!-- See flow info in the controllers folder --}}
-<div class="info-boxes">
-  <div class="info-text"><i class="fa-solid fa-ice-cream"></i> What: 
-    <br> This triathlon is unlike any that you have been apart of in the past because you can choose your own adventure!
-    <br>Want to run, but not swim? Want to sun tan, bike, and walk? Want to do none of it, but come over for ice cream <br> -- Sounds great! -- <br>   </div>
 
-</div>
-<div class="info-boxes">
-  <div class="info-text"><i class="fa-solid fa-ice-cream"></i> When: TBD but likely early August</div>
-
-</div>
-<div class="info-boxes">
-  <div class="info-text"><i class="fa-solid fa-ice-cream"></i> Where: 
-  <p> Optional Portions:
-    <!-- If hover over link, will show you webpage? -->
-    <br>
-    <i class="fa-solid fa-person-swimming"></i> SWIM/PADDLE/FLOAT ROUTE: <a href="https://earth.google.com/web/@47.55288806,-122.25596016,7.58916337a,674.14110544d,35y,0h,0t,0r" target="_blank">Swim from the Clay studio to the swim docks and back!</a> ~0.5 miles
-    <br>
-    <i class="fa-solid fa-bicycle"></i> BIKE ROUTE: <a href="https://goo.gl/maps/U11XgG5Z4NMqpLJr8" target="_blank">Bike from the Clay Studio to my house! </a> ~12.9 miles
-    <br>
-    <i class="fa-solid fa-person-running"></i> RUN/WALK ROUTE: <a href="https://goo.gl/maps/oSxFB93wUtkyMBEg6" target="_blank">Run around the neighborhood!</a> ~3.1 miles
-    <br>
-    <br>
-    ICE CREAM!! @ 4618 S. Genesee St. Seattle, WA 98118
-    </i>
-  </p>
-  
-  
-  </div>
-
-</div>
-<div class="info-boxes">
-  <div class="info-text"><i class="fa-solid fa-ice-cream"></i> Why: </div>
-
-</div>
-<div class="info-boxes">
-  <div class="info-text"><i class="fa-solid fa-ice-cream"></i> Registration: <br>
-  If you'd like to be apart of this soon to be legendary event, please fill out the form below and pay a small registration fee [$5-$20 suggested] if you can. <br> 
-  The registration fee would include the treats at the end of the race, access to water, bike pumps, adult beverages, as well as a thrifted and potentially tye-dyed t-shirt to commemberate this event.
-<br>
-<br>
 {{{body}}}
-<br>
-<br>
-Find me on Venmo @Casey-Fee-1. <!-- Insert QR code/hyperlink of venmo --></div>
-
-<!-- Name: -->
-<!-- T-shirt Size: -->
-<!--  -->
-<!-- Check Boxes for what parts of the event you'd like to do -->
 
 
-</div>
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 
-{{!-- If we have time, let's include this? --}}
-<div class="info-boxes">
-  <div class="info-text"><i class="fa-solid fa-ice-cream"></i> Want to Volunteer? <br>
-  Want to watch bikes during the swim? Be the event photographer? Set up the ice cream station? Help clean up at the end? Create the t-shirts? Lead a group stretch? Let me know!
-  </div>
 
-</div>
+
 {{!-- 
 <div class="info-aboutme">
   <div class="info-text"><i class="fa-solid fa-ice-cream"></i> Me and this site:

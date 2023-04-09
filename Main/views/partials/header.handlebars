@@ -3,6 +3,17 @@
     <div class="col-md-3">Home</div>
     <div class="col-md-3">About</div>
     <div class="col-md-3">
-        <a href="/registration">Sign-Up</a>
+        <nav>
+            <a href="/">Home</a>
+            <!-- If the user is logged in, show a logout button -->
+            {{#if loggedIn}}
+            <button id="logout" class="btn-no-style">Logout</button>
+            {{else}}
+            <!-- Otherwise, show a link to login -->
+            <a href="/login">Login</a>
+            <a href="/voting">Supplies Voting</a>
+            {{/if}}
+        </nav>
+        
     </div>
 </nav>

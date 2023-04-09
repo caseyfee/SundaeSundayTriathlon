@@ -1,24 +1,65 @@
-<!-- Loop over each object in the projects array -->
-{{#each projects as |project| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
-    <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
-      <a href="/project/{{project.id}}">{{project.name}}</a>
-    </h2>
-    <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
-      needed!
-    </p>
-    <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{project.description}}
-    </p>
-  </div>
+{{!-- All these info-boxes should be a seperate partial, and what the main page is directed to right away --}}
+{{!-- See flow info in the controllers folder --}}
+<div class="info-boxes">
+  <div class="info-text"><i class="fa-solid fa-ice-cream"></i> What: 
+    <br> This triathlon is unlike any that you have been apart of in the past because you can choose your own adventure!
+    <br>Want to run, but not swim? Want to sun tan, bike, and walk? Want to do none of it, but come over for ice cream <br> -- Sounds great! -- <br>   </div>
+
 </div>
-{{/each}}
+<div class="info-boxes">
+  <div class="info-text"><i class="fa-solid fa-ice-cream"></i> When: TBD but likely early August</div>
+
+</div>
+<div class="info-boxes">
+  <div class="info-text"><i class="fa-solid fa-ice-cream"></i> Where: 
+  <p> Optional Portions:
+    <!-- If hover over link, will show you webpage? -->
+    <br>
+    <i class="fa-solid fa-person-swimming"></i> SWIM/PADDLE/FLOAT ROUTE: <a href="https://earth.google.com/web/@47.55288806,-122.25596016,7.58916337a,674.14110544d,35y,0h,0t,0r" target="_blank">Swim from the Clay studio to the swim docks and back!</a> ~0.5 miles
+    <br>
+    <i class="fa-solid fa-bicycle"></i> BIKE ROUTE: <a href="https://goo.gl/maps/U11XgG5Z4NMqpLJr8" target="_blank">Bike from the Clay Studio to my house! </a> ~12.9 miles
+    <br>
+    <i class="fa-solid fa-person-running"></i> RUN/WALK ROUTE: <a href="https://goo.gl/maps/oSxFB93wUtkyMBEg6" target="_blank">Run around the neighborhood!</a> ~3.1 miles
+    <br>
+    <br>
+    ICE CREAM!! @ 4618 S. Genesee St. Seattle, WA 98118
+    </i>
+  </p>
+  
+  
+  </div>
+
+</div>
+<div class="info-boxes">
+  <div class="info-text"><i class="fa-solid fa-ice-cream"></i> Why: Why not?! </div>
+
+</div>
+<div class="info-boxes">
+  <div class="info-text"><i class="fa-solid fa-ice-cream"></i> Registration: <br>
+  If you'd like to be apart of this soon to be legendary event, please fill out the form below and pay a small registration fee [$5-$20 suggested] if you can. <br> 
+  The registration fee would include the treats at the end of the race, access to water, bike pumps, adult beverages, as well as a thrifted and potentially tye-dyed t-shirt to commemberate this event.
+<br>
+<br>
+
+ <!-- If the user is logged in, show a logout button -->
+    {{#if loggedIn}}
+    <button id="logout" class="btn-no-style">Logout</button>
+    {{else}}
+    <!-- Otherwise, show a link to login -->
+    <a href="/login">Sign into Website to Sign Up for Event</a>
+    {{/if}}
+
+{{!-- <button href="/login" class="btn btn-primary" type="submit">Sign into Website to Sign Up for Event </button> --}}
+
+<br>
+<br>
+Find me on Venmo @Casey-Fee-1. <!-- Insert QR code/hyperlink of venmo --></div>
+
+{{!-- If we have time, let's include this? --}}
+<div class="info-boxes">
+  <div class="info-text"><i class="fa-solid fa-ice-cream"></i> Want to Volunteer? <br>
+  Want to watch bikes during the swim? Be the event photographer? Set up the ice cream station? Help clean up at the end? Create the t-shirts? Lead a group stretch? Please email me!
+  </div>
+
+</div>
+</div>

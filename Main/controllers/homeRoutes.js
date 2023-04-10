@@ -89,4 +89,23 @@ router.get('/voting', (req, res) => {
   res.render('voting');
 });
 
+// connection to registration page, work in progress
+router.get('/registration', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/registration');
+    return;
+  }
+
+  res.render('registration');
+})
+// connection to participants page, work in progress
+router.get('/participants', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/participants');
+    return;
+  }
+
+  res.render('participants');
+})
+
 module.exports = router;

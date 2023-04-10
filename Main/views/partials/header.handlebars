@@ -1,19 +1,14 @@
 <nav class="row">
-    {{!-- <div class="col-md-3">Logo</div>
-    <div class="col-md-3">Home</div>
-    <div class="col-md-3">About</div> --}}
-    <div class="col-md-3">
-        <nav>
-            <a href="/">Home</a>
-            <!-- If the user is logged in, show a logout button -->
-            {{#if loggedIn}}
-            <button id="logout" class="col-md-3 btn-no-style">Logout</button>
-            {{else}}
-            <!-- Otherwise, show a link to login -->
-            <a href="/login">Login</a>
-            <a href="/voting">Voting</a>
-            {{/if}}
-        </nav>
-        
+    <div class="text-center">
+        <a href="/" class="text-decoration-none">Home</a>
+<!-- If the user is logged in, show a logout button -->
+        {{#if loggedIn}}
+        <button id="logout" class="col-md-3 btn-no-style">Logout</button>
+        {{else}}
+<!-- Otherwise, show a link to login -->
+        <a href="/login" class="text-decoration-none">Login</a>
+        <a href="/registration" class="text-decoration-none">Registration</a>
+        <a href="/voting" class="text-decoration-none">Voting</a>
+        {{/if}}
     </div>
 </nav>

@@ -57,6 +57,7 @@ User.init(
       type: DataTypes.BOOLEAN,
       allowNull: true,
       },
+      // Add event ID here so the user can connect/choose one
   },
   {
     hooks: {

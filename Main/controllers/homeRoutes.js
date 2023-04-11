@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { Event, User } = require('../models');
+const { Event, User, Flavor } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
+    // Get all events and JOIN with user data
     const eventData = await Event.findAll({
       include: [
         {
@@ -49,25 +49,25 @@ router.get('/event/:id', async (req, res) => {
   }
 });
 
-// // Use withAuth middleware to prevent access to route
-// router.get('/profile', withAuth, async (req, res) => {
-//   try {
-//     // Find the logged in user based on the session ID
-//     const userData = await User.findByPk(req.session.user_id, {
-//       attributes: { exclude: ['password'] },
-//       include: [{ model: Project }],
-//     });
+// Use withAuth middleware to prevent access to route
+router.get('/profile', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Event }],
+    });
 
-//     const user = userData.get({ plain: true });
+    const user = userData.get({ plain: true });
 
-//     res.render('profile', {
-//       ...user,
-//       logged_in: true
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+    res.render('profile', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
@@ -79,20 +79,30 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/voting', (req, res) => {
+router.get('/voting', async (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (!req.session.logged_in) {
     res.redirect('/login');
     return;
   }
 
-  res.render('voting');
+  const flavorData = await Flavor.findAll();
+
+  // Serialize data so the template can read it
+  const flavors = flavorData.map((flavor) => flavor.get({ plain: true }));
+
+  // Pass serialized data and session flag into template
+  res.render('voting', { 
+    flavors, 
+    logged_in: req.session.logged_in 
+  });
+
 });
 
 // connection to registration page, work in progress
 router.get('/registration', (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect('/registration');
+  if (!req.session.logged_in) {
+    res.redirect('/login');
     return;
   }
 
@@ -100,8 +110,8 @@ router.get('/registration', (req, res) => {
 })
 // connection to participants page, work in progress
 router.get('/participants', (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect('/participants');
+  if (!req.session.logged_in) {
+    res.redirect('/login');
     return;
   }
 

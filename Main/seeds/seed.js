@@ -1,6 +1,7 @@
 const sequelize = require('../config/connection');
-const { User, Event } = require('../models');
+const { User, Event, Flavor } = require('../models');
 
+const flavorData = require('./flavors.json');
 const userData = require('./userData.json');
 const eventData = require('./eventData.json');
 
@@ -12,12 +13,10 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const project of projectData) {
-    await Project.create({
-      ...project,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-    });
-  }
+  const flavors = await Flavor.bulkCreate(flavorData, {
+    individualHooks: true,
+    returning: true,
+  });
 
   process.exit(0);
 };

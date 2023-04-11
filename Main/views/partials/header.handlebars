@@ -1,0 +1,14 @@
+<nav class="row">
+    <div class="text-center">
+        <a href="/" class="text-decoration-none">Home</a>
+<!-- If the user is logged in, show a logout button -->
+        {{#if loggedIn}}
+        <button id="logout" class="col-md-3 btn-no-style">Logout</button>
+        {{else}}
+<!-- Otherwise, show a link to login -->
+        <a href="/login" class="text-decoration-none">Login</a>
+        <a href="/registration" class="text-decoration-none">Registration</a>
+        <a href="/voting" class="text-decoration-none">Voting</a>
+        {{/if}}
+    </div>
+</nav>

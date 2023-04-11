@@ -1,0 +1,28 @@
+{{!-- {{> header}}
+
+ --}}
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+{{#if user.length}}
+  <div class="col-md-6 participants-list">
+    <h2>Triathalon Participants:</h3>
+
+    {{#each users as |user|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4>
+            <a href="/user/{{user.id}}">{{user.name}}</a>
+        </h4>
+        {{!-- Todo: get events selected to populate for event-names --}}
+        <p>
+            {{user.name}} has signed up for event-names!
+        </p>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}

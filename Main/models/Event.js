@@ -1,10 +1,10 @@
-// Remove project model??
+// Change model to Events and change reference on all files
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Project extends Model {}
+class Event extends Model {}
 
-Project.init(
+Event.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -41,8 +41,8 @@ Project.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'event',
   }
 );
 
-module.exports = Project;
+module.exports = Event;

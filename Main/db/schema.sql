@@ -1,2 +1,3 @@
-DROP DATABASE IF EXISTS crowdfund_db;
-CREATE DATABASE crowdfund_db;
+DROP DATABASE IF EXISTS iceCreamTri_db;
+CREATE DATABASE iceCreamTri_db;
+USE iceCreamTri_db;

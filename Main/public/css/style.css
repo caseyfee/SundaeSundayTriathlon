@@ -38,19 +38,22 @@ header, .project:not(:last-child) {
 --smallwidth: 50%;
 }
 
-/* The hero image */
-.hero-image {
-/* Use "linear-gradient" to add a darken background effect to the image. This will make the text easier to read */
-background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/SundaeSundayTriathlon/imgs/alexander-grey-YaajxnfGeCk-unsplash.jpg");
-/* Set a specific height */
-height: 33vh;
-/* Position and center the image to scale nicely on all screens */
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-position: relative;
+#sprinkles {
+height:100px;
+width:100px;
 }
 
+/* The hero image */
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image. This will make the text easier to read */
+  height: 33vh;
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  }
+  
 /* Place text in the middle of the image */
 .hero-text {
 text-align: center;

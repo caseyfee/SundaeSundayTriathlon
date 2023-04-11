@@ -1,12 +1,17 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#project-name').value.trim();
-  const needed_funding = document.querySelector('#project-funding').value.trim();
-  const description = document.querySelector('#project-desc').value.trim();
+  const name = document.querySelector('#name-signup').value.trim();
+  const email = document.querySelector('#email-signup').value.trim();
+  const password = document.querySelector('#password-signup').value.trim();
+  const tshirt = document.querySelector('#tshirt-signup').value.trim();
+  const swim = document.querySelector('#swim-signup').value.trim();
+  const bike = document.querySelector('#bike-signup').value.trim();
+  const run = document.querySelector('#run-signup').value.trim();
+  const volunteer = document.querySelector('#volunteer-signup').value.trim();
 
-  if (name && needed_funding && description) {
-    const response = await fetch(`/api/projects`, {
+  if (name) {
+    const response = await fetch(`/api/users`, {
       method: 'POST',
       body: JSON.stringify({ name, needed_funding, description }),
       headers: {

@@ -8,6 +8,8 @@ class User extends Model {
   }
 }
 
+// update with T-shirt size, bike? run? swim? volutneer? 
+
 User.init(
   {
     id: {
@@ -35,6 +37,26 @@ User.init(
         len: [8],
       },
     },
+    tshirt: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      },
+    swim: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
+      },
+    bike: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
+      },
+    run: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
+      },
+    volunteer: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
+      },
   },
   {
     hooks: {

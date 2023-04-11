@@ -1,16 +1,17 @@
-// Participants page with project and project funding..
+// Participants page with events
+// change from projectRoutes to eventRoutes
 const router = require('express').Router();
-const { Project } = require('../../models');
+const { Event } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newProject = await Project.create({
+    const newEvent = await Event.create({
       ...req.body,
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newProject);
+    res.status(200).json(newEvent);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -18,19 +19,19 @@ router.post('/', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const projectData = await Project.destroy({
+    const eventData = await Event.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    if (!projectData) {
-      res.status(404).json({ message: 'No project found with this id!' });
+    if (!eventData) {
+      res.status(404).json({ message: 'No event found with this id!' });
       return;
     }
 
-    res.status(200).json(projectData);
+    res.status(200).json(eventData);
   } catch (err) {
     res.status(500).json(err);
   }

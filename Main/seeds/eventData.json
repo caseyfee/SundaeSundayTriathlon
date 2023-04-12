@@ -10,5 +10,9 @@
   {
     "name": "RUN/WALK",
     "description": "Run around the neighborhood! ~3.1 miles"
+  },
+  {
+    "name": "Volunteer",
+    "description": "We need help!"
   }
 ]

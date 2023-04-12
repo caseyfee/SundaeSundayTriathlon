@@ -1,4 +1,35 @@
+// const votingHandler = async (event) => {
+//   event.preventDefault();
+// // ADD SUBMIT BUTTON
+// // ON.SUBMIT
+//   // collect voting choices
+//   // post route - when button is pressed
+//   const topping = document.querySelector({id}).value.trim();
 
+//   if(topping){
+//     const response = await fetch(`/api/flavors`, {
+//       method: 'GET',
+//       body: JSON.stringify({id}),
+//       headers: { 'Content-Type': 'application/json' },
+//       // get current vote
+//     // take current +1
+//     // submit it to seq so that it's updated
+//     // return votes
+//     });
+
+//     // get all flavor names function (possibly do a get for all flavors that are not 0)
+//     // if flavor has been checked
+
+//   if (response.ok) {
+//     updateChart(labels, votes);
+//   } else {
+//     alert(response.statusText);
+//   }
+
+//   }
+
+
+// }
 
 
 

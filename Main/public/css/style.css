@@ -1,92 +1,38 @@
+/* Set the font family for all elements */
+* {
+  font-family: 'Lilita One', 'Times New Roman', sans-serif;
+}
+
+/* Add a bottom border to header and all project elements except the last one */
 header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
 
-.no-button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  color: #1b89bc;
-  text-decoration: none;
-  font-size: 100%;
+/* Center the body element and set its width to 75% */
+body {
+ width:auto;
+ height: auto;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
 
-.no-button:hover {
-  color: #065b83;
-  text-decoration: underline;
+/* Set the height and width of the #sprinkles div to auto */
+.sprinkles {
+  background-attachment:fixed;
+  background-position:center;
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
+/* Center the content in the sundae div */
+.sundae {
+  justify-content: center;
+  align-items: center;
 }
 
-* {
-  /* height: 100%; */
-  font-family: 'Lilita One', cursive;
+.scoops {
+  background-color: black;
+  width: 75%;
+  text-align: center;
+  margin:auto;
+  padding: 50px;
 }
-
-:root {
---color1: #84A98C;
---color2:  #354f52;
---color3: #ffb5a7;
---color4: #CAD2C5;
---color5: #b9c6ae;
---white: #fff; 
---smallwidth: 50%;
-}
-
-/* The hero image */
-.hero-image {
-/* Use "linear-gradient" to add a darken background effect to the image. This will make the text easier to read */
-background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/SundaeSundayTriathlon/imgs/alexander-grey-YaajxnfGeCk-unsplash.jpg");
-/* Set a specific height */
-height: 33vh;
-/* Position and center the image to scale nicely on all screens */
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-position: relative;
-}
-
-/* Place text in the middle of the image */
-.hero-text {
-text-align: center;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-color: white;
-}
-
-/* Info Grid in Middle */
-
-.info-boxes {
-display: flex;
-flex-wrap: wrap;
-justify-content: space-around;
-gap: 6px;
-background-color: white;
-margin: 10px;
-border: 3px solid orange;
-border-radius: 15px;
-color: black;
-text-align: center;
-}
-
-.info-aboutme {
-display: flex;
-flex-wrap: wrap;
-justify-content: space-around;
-gap: 6px;
-background-color: white;
-margin: 10px;
-padding: 10px;
-border: 3px solid lightgray;
-border-radius: 15px;
-color: black;
-}
-
-

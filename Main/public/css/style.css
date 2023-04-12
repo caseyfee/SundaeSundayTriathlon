@@ -34,6 +34,7 @@ body {
   justify-content: center;
   align-items: center;
   height:fit-content;
+  padding: 100px;
 }
 
 .scoops {
@@ -42,6 +43,6 @@ body {
   height:fit-content;
   text-align: center;
   margin:auto;
-  padding: 50px;
+  padding: 100px;
 }
 

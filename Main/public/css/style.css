@@ -10,6 +10,12 @@ header, .project:not(:last-child) {
 
 /* Center the body element and set its width to 75% */
 body {
+  background-image: url('https://images.unsplash.com/photo-1516746924755-babd21844370?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+  background-attachment:fixed;
+  background-position:auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: auto;
  width:auto;
  height: auto;
  display: flex;
@@ -19,20 +25,22 @@ body {
 
 /* Set the height and width of the #sprinkles div to auto */
 .sprinkles {
-  background-attachment:fixed;
-  background-position:center;
+  height:fit-content;
 }
 
 /* Center the content in the sundae div */
 .sundae {
   justify-content: center;
   align-items: center;
+  height:fit-content;
 }
 
 .scoops {
-  background-color: black;
+  background-color: #ffffff;
   width: 75%;
+  height:fit-content;
   text-align: center;
   margin:auto;
   padding: 50px;
 }
+

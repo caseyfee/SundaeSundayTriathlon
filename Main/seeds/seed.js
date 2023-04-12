@@ -1,6 +1,7 @@
 const sequelize = require('../config/connection');
 const { User, Event, Flavor } = require('../models');
 
+
 const flavorData = require('./flavors.json');
 const userData = require('./userData.json');
 const eventData = require('./eventData.json');

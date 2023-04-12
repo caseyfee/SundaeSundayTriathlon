@@ -25,3 +25,4 @@ Event.belongsTo(User, {
 });
 
 module.exports = { User, Event, Flavor, Vote };
+

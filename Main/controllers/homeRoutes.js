@@ -1,10 +1,12 @@
 const router = require('express').Router();
 const { Event, User, Flavor } = require('../models');
+
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
     // Get all events and JOIN with user data
+
     const eventData = await Event.findAll({
       include: [
         {
@@ -37,6 +39,7 @@ router.get('/event/:id', async (req, res) => {
         },
       ],
     });
+
 
     const event = eventData.get({ plain: true });
 

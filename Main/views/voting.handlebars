@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Vote for your favorite item</title>
-    <script src="/Main/views/voting.js"></script>
 
-  </head>
-  <body>
-    <h1>Vote for your favorite item:</h1>
-    <form id="votingForm">
-      <input type="checkbox" name="vote" value="item1" id="item1NutFree">
-      <label for="item1">Nut Free</label><br>
-      <input type="checkbox" name="vote" value="item2" id="item2DairyFree">
-      <label for="item2">Dairy Free</label><br>
-      <input type="checkbox" name="vote" value="item3" id="item3GlutenFree">
-      <label for="item3">Gluten Free</label><br>
-      <input type="submit" value="Vote">
-    </form>
-    <h2>Results:</h2>
-    <p id="item1-votes">Nut Free: 0 votes</p>
-    <p id="item2-votes">Dairy Free: 0 votes</p>
-    <p id="item3-votes">Gluten Free: 0 votes</p>
-  </body>
+<head>
+  <title>Vote for your favorite item</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="row">Vote for your favorite item:</h1>
+    <div class="row">
+      <div class="col-4">
+        <form id="votingForm">
+          {{#each flavors as |flavor|}}
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id={{id}}>
+            <label class="form-check-label" for={{id}}>
+              {{name}}
+            </label>
+          </div>
+          {{/each}}
+        </form>
+      </div>
+      <div class="col-8">
+        <canvas id="flavor-votes"></canvas>
+      </div>
+      
+    </div>
+
+  </div>
+
+
+</body>
+
 </html>

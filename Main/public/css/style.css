@@ -16,6 +16,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   overflow: auto;
+  opacity: 0.9;
  width:auto;
  height: auto;
  display: flex;

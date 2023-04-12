@@ -68,7 +68,9 @@ router.get('/profile', withAuth, async (req, res) => {
       logged_in: true
     });
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
+
   }
 });
 

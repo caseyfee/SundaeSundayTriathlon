@@ -42,17 +42,24 @@
       </div>
     </div>
   </nav>
+
+{{{body}}}
+
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+
     <p>Blueberries chocolate chips chocolate syrup chocolate chip cookie dough. Rainbow sprinkles neopolitan oreos cherry french vanilla chocolate chip mint chocolate chip chocolate chips mint blueberries marshmallows. Rocky road cherry mint chocolate chip mint vanilla coffee cookie dough vanilla mint chocolate chip rainbow sprinkles. Pistachio almonds mint m&amp;m's kitkat neopolitan. Pistachio rocky road chocolate, chocolate chips kitkat salted caramel syrup chocolate chip cookie dough chocolate sprinkles Pistachio strawberries chocolate chips.</p> 
    <p>Blueberries chocolate chips chocolate syrup chocolate chip cookie dough. Rainbow sprinkles neopolitan oreos cherry french vanilla chocolate chip mint chocolate chip chocolate chips mint blueberries marshmallows. Rocky road cherry mint chocolate chip mint vanilla coffee cookie dough vanilla mint chocolate chip rainbow sprinkles. Pistachio almonds mint m&amp;m's kitkat neopolitan. Pistachio rocky road chocolate, chocolate chips kitkat salted caramel syrup chocolate chip cookie dough chocolate sprinkles Pistachio strawberries chocolate chips.</p> 
     <p>Blueberries chocolate chips chocolate syrup chocolate chip cookie dough. Rainbow sprinkles neopolitan oreos cherry french vanilla chocolate chip mint chocolate chip chocolate chips mint blueberries marshmallows. Rocky road cherry mint chocolate chip mint vanilla coffee cookie dough vanilla mint chocolate chip rainbow sprinkles. Pistachio almonds mint m&amp;m's kitkat neopolitan. Pistachio rocky road chocolate, chocolate chips kitkat salted caramel syrup chocolate chip cookie dough chocolate sprinkles Pistachio strawberries chocolate chips.</p> 
      <p>Blueberries chocolate chips chocolate syrup chocolate chip cookie dough. Rainbow sprinkles neopolitan oreos cherry french vanilla chocolate chip mint chocolate chip chocolate chips mint blueberries marshmallows. Rocky road cherry mint chocolate chip mint vanilla coffee cookie dough vanilla mint chocolate chip rainbow sprinkles. Pistachio almonds mint m&amp;m's kitkat neopolitan. Pistachio rocky road chocolate, chocolate chips kitkat salted caramel syrup chocolate chip cookie dough chocolate sprinkles Pistachio strawberries chocolate chips.</p> 
-     <h4>Leave a Comment:</h4>
-  <form role="form">
-    <div class="form-group">
-      <textarea class="form-control" rows="3" required></textarea>
-    </div>
-    <button type="submit" class="btn btn-success">Submit</button>
-  </form>
+ <form role="form">
+  <div class="form-group">
+    <label for="comment">Please leave a comment:</label>
+    <textarea class="form-control" id="comment" name="comment" rows="3" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
     </div>
   </div></div>
 </body>

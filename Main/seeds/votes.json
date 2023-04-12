@@ -1,6 +1,46 @@
 [
-{
-
-
-}
+    {
+        "flavor_name": "dairy-free",
+        "flavor_count": 0
+    },
+    {
+        "flavor_name": "nut-free",
+        "flavor_count": 0
+    },
+    {
+        "flavor_name": "gluten-free",
+        "flavor_count": 0
+    },
+    {
+        "flavor_name": "chocolate",
+        "flavor_count": 0
+    },
+    {
+        "flavor_name": "vanilla",
+        "flavor_count": 0
+    },
+    {
+        "flavor_name": "strawberry",
+        "flavor_count": 0
+    },
+    {
+        "flavor_name": "chocolate sauce",
+        "flavor_count": 0
+    },
+    {
+        "flavor_name": "sprinkle",
+        "flavor_count": 0
+    },
+    {
+        "flavor_name": "peanuts",
+        "flavor_count": 0
+    },
+    {
+        "flavor_name": "berries",
+        "flavor_count": 0
+    },
+    {
+        "flavor_name": "gummy bears",
+        "flavor_count": 0
+    }
 ]

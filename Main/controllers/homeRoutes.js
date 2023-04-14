@@ -20,9 +20,9 @@ router.get('/', async (req, res) => {
     const events = eventData.map((event) => event.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      events, 
-      logged_in: req.session.logged_in 
+    res.render('homepage', {
+      events,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -68,7 +68,9 @@ router.get('/profile', withAuth, async (req, res) => {
       logged_in: true
     });
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
+
   }
 });
 
@@ -80,6 +82,18 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+
+router.get('/logout', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    })
+  } else {
+    res.render('homepage');
+  }
 });
 
 router.get('/voting', async (req, res) => {
@@ -95,9 +109,9 @@ router.get('/voting', async (req, res) => {
   const flavors = flavorData.map((flavor) => flavor.get({ plain: true }));
 
   // Pass serialized data and session flag into template
-  res.render('voting', { 
-    flavors, 
-    logged_in: req.session.logged_in 
+  res.render('voting', {
+    flavors,
+    logged_in: req.session.logged_in
   });
 
 });
@@ -112,13 +126,24 @@ router.get('/registration', (req, res) => {
   res.render('registration');
 })
 // connection to participants page, work in progress
-router.get('/participants', (req, res) => {
+router.get('/participants', async (req, res) => {
   if (!req.session.logged_in) {
     res.redirect('/login');
     return;
   }
 
-  res.render('participants');
+  const userData = await User.findAll();
+
+  // Serialize data so the template can read it
+  const users = userData.map((user) => user.get({ plain: true }));
+
+  // Pass serialized data and session flag into template
+  res.render('participants', { 
+    users, 
+    logged_in: req.session.logged_in 
+  });
+
+  // const eventData = await Event.findByPk()
 })
 
 module.exports = router;

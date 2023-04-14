@@ -19,6 +19,11 @@ const seedDatabase = async () => {
     returning: true,
   });
 
+  const events = await Event.bulkCreate(eventData, {
+    individualHooks: true,
+    returning: true,
+  });
+  
   process.exit(0);
 };
 

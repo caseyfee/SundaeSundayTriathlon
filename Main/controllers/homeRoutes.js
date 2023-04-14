@@ -68,7 +68,9 @@ router.get('/profile', withAuth, async (req, res) => {
       logged_in: true
     });
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
+
   }
 });
 
@@ -124,13 +126,24 @@ router.get('/registration', (req, res) => {
   res.render('registration');
 })
 // connection to participants page, work in progress
-router.get('/participants', (req, res) => {
+router.get('/participants', async (req, res) => {
   if (!req.session.logged_in) {
     res.redirect('/login');
     return;
   }
 
-  res.render('participants');
+  const userData = await User.findAll();
+
+  // Serialize data so the template can read it
+  const users = userData.map((user) => user.get({ plain: true }));
+
+  // Pass serialized data and session flag into template
+  res.render('participants', { 
+    users, 
+    logged_in: req.session.logged_in 
+  });
+
+  // const eventData = await Event.findByPk()
 })
 
 module.exports = router;

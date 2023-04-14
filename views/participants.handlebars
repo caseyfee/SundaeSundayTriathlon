@@ -1,28 +1,27 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
-  </div>
-</div>
-
-
 <div class="col-md-6 container">
-  <h2>Triathalon Participants:</h2>
-
-
-
+  <h2>Triathlon Participants:</h2>
+  
   {{#each users as |user|}}
   <div class="card mb-2">
     <div class="card-body col-md-8 border border-3 border-warning rounded">
       <h4 class="card-title">
         {{user.name}}
       </h4>
-        {{!-- Todo: get events selected to populate for event-names --}}
-        {{!-- double check events and user object array because calling model properties is currently not working --}}
-      <p class="card-text">
-      Has signed up for {{user.events.name}}!
-      </p>
+      <!-- is checking whether the user object is empty or not -->
+      {{#if user.events.length}}
+        <p class="card-text">
+          Has signed up for:
+          <ul>
+            <!-- This code is used to display the events that each user has signed up for. -->
+            {{#each user.events as |event|}}
+              <li>{{event.name}}</li>
+            {{/each}}
+          </ul>
+        </p>
+      {{else}}
+        <p class="card-text">Has not signed up for any events yet.</p>
+      {{/if}}
     </div>
   </div>
   {{/each}}
 </div>
-

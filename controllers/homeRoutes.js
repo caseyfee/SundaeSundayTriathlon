@@ -118,7 +118,7 @@ router.get('/voting', async (req, res) => {
 
 });
 
-// connection to registration page, work in progress
+  // connection to registration page
 router.get('/registration', (req, res) => {
   if (!req.session.logged_in) {
     res.redirect('/login');
@@ -127,25 +127,29 @@ router.get('/registration', (req, res) => {
 
   res.render('registration');
 })
-// connection to participants page, work in progress
+
+// display registered users
 router.get('/participants', async (req, res) => {
   if (!req.session.logged_in) {
     res.redirect('/login');
     return;
   }
 
-  const userData = await User.findAll();
+  try {
+    const userData = await User.findAll({
+      attributes: ['id', 'name', 'email'] // only include necessary attributes
+    });
 
-  // Serialize data so the template can read it
-  const users = userData.map((user) => user.get({ plain: true }));
+    const users = userData.map((user) => user.get({ plain: true }));
 
-  // Pass serialized data and session flag into template
-  res.render('participants', { 
-    users, 
-    logged_in: req.session.logged_in 
-  });
+    res.render('participants', { 
+      users, 
+      logged_in: req.session.logged_in 
+    });
 
-  // const eventData = await Event.findByPk()
-})
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
+});
 
-module.exports = router;

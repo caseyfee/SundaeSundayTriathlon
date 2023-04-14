@@ -4,21 +4,22 @@
   If you'd like to be apart of this soon to be legendary event, please fill out the form below and pay a small registration fee [$5-$20 suggested] if you can. 
   <br> 
   The registration fee would include the treats at the end of the race, access to water, bike pumps, adult beverages, as well as a thrifted and potentially tye-dyed t-shirt to commemberate this event.
-<br>
-<br>
+  <br>
+  <br>
 
- <!-- If the user is logged in, show a logout button -->
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
+  <!-- If the user is logged in, show a logout button -->
+  {{#if logged_in}}
+    <form action="/logout" method="POST">
+      <button class="btn-no-style" type="submit">Logout</button>
+    </form>
+  {{else}}
     <!-- Otherwise, show a link to login -->
     <a href="/login">Sign into Website to Sign Up for Event</a>
-    {{/if}}
+  {{/if}}
 
-{{!-- <button href="/login" class="btn btn-primary" type="submit">Sign into Website to Sign Up for Event </button> --}}
+  <br>
+  <br>
+  <!-- Insert QR code/hyperlink of venmo -->
 
-<br>
-<br>
-Find me on Venmo @Casey-Fee-1. <!-- Insert QR code/hyperlink of venmo -->
-
+  </div>
 </div>

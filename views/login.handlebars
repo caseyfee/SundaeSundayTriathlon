@@ -2,23 +2,23 @@
   <div class="row">
     <h2>Login for Existing Users</h2>
     <form class="form login-form" action="/login" method="POST">
-  <div class="form-group">
-    <label for="name-login">name:</label>
-    <input class="form-input" type="text" id="name-login" name="username" />
-  </div>
-  <div class="form login-form">
-    <label for="email-login">Email:</label>
-    <input class="form-input" type="text" id="email-login" name="email" />
-  </div>
-  <div class="form-group">
-    <label for="password-login">Password:</label>
-    <input class="form-input" type="password" id="password-login" name="password" />
-  </div>
-  <div class="form-group">
-    <button class="btn btn-primary" type="submit">Login</button>
-    <a href="/logout" class="btn btn-secondary">Logout</a>
-  </div>
-</form>
+      <div class="form-group">
+        <label for="name-login">name:</label>
+        <input class="form-input" type="text" id="name-login" name="username" />
+      </div>
+      <div class="form login-form">
+        <label for="email-login">Email:</label>
+        <input class="form-input" type="text" id="email-login" name="email" />
+      </div>
+      <div class="form-group">
+        <label for="password-login">Password:</label>
+        <input class="form-input" type="password" id="password-login" name="password" />
+      </div>
+      <div class="form-group">
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        <button class="btn btn-primary" type="submit">Login</button>
+      </div>
+    </form>
 
 
     <h2 id="test">Sign Up for Site Access</h2>
@@ -36,7 +36,7 @@
         <input class="form-input" type="password" id="password-signup" />
       </div>
       <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
+        <button class="btn btn-primary" type="submit">Sign up</button>
       </div>
     </form>
     

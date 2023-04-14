@@ -84,15 +84,17 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-
 router.get('/logout', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
+  // If the user is already logged in, destroy the session and render the logout page
   if (req.session.logged_in) {
     req.session.destroy(() => {
-      res.status(204).end();
-    })
+      res.render('logout', { 
+        message: 'You have been successfully logged out.'
+      });
+    });
   } else {
-    res.render('homepage');
+    // If the user is not logged in, redirect to the homepage
+    res.redirect('/homepage');
   }
 });
 

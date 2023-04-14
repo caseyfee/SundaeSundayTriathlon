@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,34 +29,17 @@
     </div>
   {{> header}}
   </div>
-   <!-- Add a navbar with Voting page (this should re-direct to login page if not logged in), 
-    participant page (this should re-direct to login page if not logged in) , a link to a generic advice site for triathlons? 
-    add bar to shortcut to headers-->
 
+<div class='w-75 mx-auto'>
 
 {{{body}}}
-
+</div>
 
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   <script src="/js/voting.js"></script>
   {{/if}}
 
-
-
-{{!-- 
-<div class="info-aboutme">
-  <div class="info-text"><i class="fa-solid fa-ice-cream"></i> Me and this site:
-  <br>
-  Casey here - as many of you know I am taking a full stack bootcamp right now where I'm learning to create websites, 
-  databases, and learn about technology in a new way. I thought making a website for this event I'm organizing 
-  would be a fun way to test my current skills AND see how they progress every year since I'm hoping that this will 
-  be an annual event. Anyway, hope you enjoy the site and the triathlon if you can make it!! <i class="fa-solid fa-peace"></i>
-  </div>
-
-</div> --}}
-
-{{!-- Add a generic footer --}}
  {{> footer}}
 
 </body>

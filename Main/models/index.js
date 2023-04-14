@@ -11,6 +11,7 @@ Event.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
+
 // Connects flavors/voting/users
 User.belongsToMany(Flavor, {
   through: Vote,

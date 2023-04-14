@@ -18,3 +18,44 @@
         {{/if}}
     </div>
 </nav>
+
+ <div style="background:transparent;" id="sprinkles">
+  <div class="sundae">
+    <div class="scoops">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <!-- return to main.handlebars  -->
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <!-- If the user is logged in, show a logout button -->
+        {{#if logged_in}}
+        <!-- shows user profile info -->
+        <a href="/profile" class="btn btn-secondary">Profile</a>
+        <!-- brings user to icecream voting page -->
+        <a href="/voting" class="btn btn-secondary">Voting</a>
+        <!-- brings user to a participants list (aka profiles of other users) -->
+        <a href="/participants" class="btn btn-secondary">Participant List</a>
+  <li class="nav-item">
+    <a href="/logout" class="btn btn-secondary">Logout</a>
+  </li>
+{{else}}
+<!-- If the user is logged out, show a login button -->
+  <li class="nav-item">
+    <a href="/login" class="btn btn-primary">Login</a>
+  </li>
+{{/if}}
+        </ul>
+      </div>
+    </div>

@@ -14,16 +14,16 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  // const events = await Event.bulkCreate(eventData, {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
-
   const flavors = await Flavor.bulkCreate(flavorData, {
     individualHooks: true,
     returning: true,
   });
 
+  const events = await Event.bulkCreate(eventData, {
+    individualHooks: true,
+    returning: true,
+  });
+  
   process.exit(0);
 };
 

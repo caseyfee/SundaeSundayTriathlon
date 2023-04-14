@@ -4,24 +4,21 @@
   </div>
 </div>
 
-{{!-- {{> registration}} --}}
+<div class="col-md-6 container">
+  <h2>Triathalon Participants:</h2>
 
-{{!-- {{#if user.length}} --}}
-  <div class="col-md-6 participants-list">
-    <h2>Triathalon Participants:</h3>
-
-    {{#each users as |user|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4>
-            <a href="/user/{{user.id}}">{{user.name}}</a>
-        </h4>
+  {{#each users as |user|}}
+  <div class="card mb-2">
+    <div class="card-body col-md-8 border border-3 border-warning rounded">
+      <h4 class="card-title">
+        {{user.name}}
+      </h4>
         {{!-- Todo: get events selected to populate for event-names --}}
-        <p>
-            {{user.name}} has signed up for event-names!
-        </p>
-      </div>
+        {{!-- double check events and user object array because calling model properties is currently not working --}}
+      <p class="card-text">
+      Has signed up for {{user.events.name}}!
+      </p>
     </div>
-    {{/each}}
   </div>
-  {{!-- {{/if}} --}}
+  {{/each}}
+</div>

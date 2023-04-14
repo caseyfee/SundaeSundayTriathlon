@@ -7,6 +7,9 @@ User.hasMany(Event, {
   foreignKey: 'user_id'
 });
 
+Event.belongsTo(User, {
+  foreignKey: 'user_id'
+});
 
 // Connects flavors/voting/users
 User.belongsToMany(Flavor, {
@@ -19,10 +22,6 @@ Flavor.belongsToMany(User, {
   through: Vote,
   foreignKey: 'flavor_id',
 })
-
-Event.belongsTo(User, {
-  foreignKey: 'user_id'
-});
 
 module.exports = { User, Event, Flavor, Vote };
 

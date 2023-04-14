@@ -38,6 +38,14 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
           </li>
+          {{#if logged_in}}
+          <li class="nav-item">
+            <a class="nav-link" href="#">login</a>
+            {{#if logged_in}}
+          <li class="nav-item">
+            <a class="nav-link" href="#">logout</a>
+          </li>
+          {{/if}}
         </ul>
       </div>
     </div>
@@ -45,7 +53,7 @@
 
 {{{body}}}
 
-  {{#if loggedIn}}
+  {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
 

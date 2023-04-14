@@ -38,14 +38,15 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
           </li>
-          {{#if logged_in}}
-          <li class="nav-item">
-            <a class="nav-link" href="#">login</a>
-            {{#if logged_in}}</li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">logout</a>
-          </li>
-          {{/if}}
+        {{#if logged_in}}
+  <li class="nav-item">
+    <a href="/logout" class="btn btn-secondary">Logout</a>
+  </li>
+{{else}}
+  <li class="nav-item">
+    <a href="/login" class="btn btn-primary">Login</a>
+  </li>
+{{/if}}
         </ul>
       </div>
     </div>

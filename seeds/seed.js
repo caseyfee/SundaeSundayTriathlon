@@ -2,9 +2,10 @@ const sequelize = require('../config/connection');
 const { User, Event, Flavor } = require('../models');
 
 
-const flavorData = require('./flavors.json');
+const flavorData = require('./flavors.js');
 const userData = require('./userData.json');
 const eventData = require('./eventData.json');
+
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -23,6 +24,8 @@ const seedDatabase = async () => {
     individualHooks: true,
     returning: true,
   });
+
+  
   
   process.exit(0);
 };

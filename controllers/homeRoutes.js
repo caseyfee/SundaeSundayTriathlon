@@ -126,24 +126,28 @@ router.get('/registration', (req, res) => {
   res.render('registration');
 })
 // connection to participants page, work in progress
+// Code finds all events and maps that data, however due to model structure only able to assign
+//  one user to events
 router.get('/participants', async (req, res) => {
   if (!req.session.logged_in) {
     res.redirect('/login');
     return;
   }
 
-  const userData = await User.findAll();
-
+  
+  const eventData = await Event.findAll({
+    include:[User]
+  });
+  const events = eventData.map((event) => event.get({ plain: true }));
+  console.log(events);
   // Serialize data so the template can read it
-  const users = userData.map((user) => user.get({ plain: true }));
-
+  console.log(req.session);
+ 
   // Pass serialized data and session flag into template
   res.render('participants', { 
-    users, 
+    events, 
     logged_in: req.session.logged_in 
   });
-
-  // const eventData = await Event.findByPk()
 })
 
 module.exports = router;

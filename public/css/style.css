@@ -89,4 +89,6 @@ border-radius: 15px;
 color: black;
 }
 
-
+.icon {
+  animation-duration: 5s; /* don't forget to set a duration! */
+}

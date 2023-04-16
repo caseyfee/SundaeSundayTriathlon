@@ -24,5 +24,13 @@ Flavor.belongsToMany(User, {
   foreignKey: 'flavor_id',
 })
 
+// Flavor.hasMany(Vote, {
+//   foreignKey: 'vote_id'
+// })
+
+// Vote.belongsTo(Flavor, {
+//   foreignKey: 'vote_id'
+// })
+
 module.exports = { User, Event, Flavor, Vote };
 

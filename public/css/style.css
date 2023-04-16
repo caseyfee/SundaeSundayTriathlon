@@ -17,12 +17,6 @@ header, .project:not(:last-child) {
   text-decoration: underline;
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
-}
-
 * {
   /* height: 100%; */
   font-family: 'Lilita One', cursive;
@@ -89,4 +83,9 @@ border-radius: 15px;
 color: black;
 }
 
+.icon {
+  display: inline-block;
+  margin: 0 0.5rem;
 
+  animation-duration: 2s; /* don't forget to set a duration! */
+}

@@ -14,8 +14,11 @@ Flavor.init(
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-    }
-    ,
+    },
+      flavor_count: {
+          type: DataTypes.INTEGER,
+          allowNull: true,
+      },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

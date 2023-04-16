@@ -134,7 +134,6 @@ router.get('/participants', async (req, res) => {
     return;
   }
 
-  
   const eventData = await Event.findAll({
     include:[User]
   });

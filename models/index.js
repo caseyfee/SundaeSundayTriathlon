@@ -18,7 +18,7 @@ User.belongsToMany(Flavor, {
   foreignKey: 'user_id',
 })
 
-// Flavor belongToMany Vote (through ProductTag)
+// Flavor belongToMany Vote (through Vote)
 Flavor.belongsToMany(User, {
   through: Vote,
   foreignKey: 'flavor_id',

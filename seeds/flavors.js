@@ -1,4 +1,4 @@
-[
+module.exports = [
     {
         "name": "dairy-free"
     },
@@ -32,5 +32,5 @@
     {
         "name": "gummy bears"
     }    
-]
+];
    

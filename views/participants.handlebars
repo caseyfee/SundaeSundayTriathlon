@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+
+<div class="col-md-6 container">
+  <h2>Triathalon Participants:</h2>
+
+  {{#each events as |event|}}
+  <div class="card mb-2">
+    <div class="card-body col-md-8 border border-3 border-warning rounded">
+      <h4 class="card-title">
+        {{event.user.name}}
+      </h4>
+        {{!-- Todo: get events selected to populate for event-names --}}
+        {{!-- double check events and user object array because calling model properties is currently not working --}}
+      <p class="card-text">
+      Has signed up for {{event.name}}!
+      </p>
+    </div>
+  </div>
+  {{/each}}
+</div>
+

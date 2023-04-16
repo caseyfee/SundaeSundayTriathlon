@@ -23,7 +23,7 @@ Vote.init(
             type: DataTypes.STRING,
             references: {
                 model: 'flavor',
-                key: 'name',
+                key: 'flavor_name',
             },
         },
         flavor_count: {

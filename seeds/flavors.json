@@ -1,36 +1,36 @@
 [
     {
-        "name": "dairy-free"
+        "flavor_name": "dairy-free"
     },
     {
-        "name": "nut-free"
+        "flavor_name": "nut-free"
     },
     {
-        "name": "gluten-free"
+        "flavor_name": "gluten-free"
     },
     {
-        "name": "chocolate"
+        "flavor_name": "chocolate"
     },
     {
-        "name": "vanilla"
+        "flavor_name": "vanilla"
     },
     {
-        "name": "strawberry"
+        "flavor_name": "strawberry"
     },
     {
-        "name": "chocolate sauce"
+        "flavor_name": "chocolate sauce"
     },
     {
-        "name": "sprinkle"
+        "flavor_name": "sprinkle"
     },
     {
-        "name": "peanuts"
+        "flavor_name": "peanuts"
     },
     {
-        "name": "berries"
+        "flavor_name": "berries"
     },
     {
-        "name": "gummy bears"
+        "flavor_name": "gummy bears"
     }    
 ]
    

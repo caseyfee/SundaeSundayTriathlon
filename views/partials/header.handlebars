@@ -1,0 +1,20 @@
+<nav class="row">
+    <div class="text-center">
+        <a href="/" class="text-decoration-none">Home</a>
+<!-- If the user is logged in, show a logout button -->
+        {{#if loggedIn}}
+         <a href="/profile">profile</a> |
+        <button class="no-button" id="logout">logout</button>
+
+        {{!-- <button id="logout" class="col-md-3 btn-no-style">Logout</button> --}}
+        {{else}}
+<!-- Otherwise, show a link to login -->
+        <a href="/login" class="text-decoration-none">Login</a>
+        {{!-- <a href="/logout" class="text-decoration-none">Logout</a> --}}
+        <a href="/profile" class="text-decoration-none">Profile</a>
+        {{!-- <a href="/registration" class="text-decoration-none">Registration</a> --}}
+        <a href="/voting" class="text-decoration-none">Voting</a>
+        <a href="/participants" class="text-decoration-none">Participant List</a>
+        {{/if}}
+    </div>
+</nav>

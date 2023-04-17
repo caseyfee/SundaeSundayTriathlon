@@ -117,14 +117,16 @@ router.get('/voting', async (req, res) => {
 });
 
 // connection to registration page, work in progress
-router.get('/registration', (req, res) => {
-  if (!req.session.logged_in) {
-    res.redirect('/login');
-    return;
-  }
+// router.get('/registration', (req, res) => {
+//   if (!req.session.logged_in) {
+//     res.redirect('/login');
+//     return;
+//   }
 
-  res.render('registration');
-})
+//   res.render('registration');
+// })
+
+
 // connection to participants page, work in progress
 // Code finds all events and maps that data, however due to model structure only able to assign
 //  one user to events

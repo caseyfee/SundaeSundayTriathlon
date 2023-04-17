@@ -32,10 +32,15 @@
       <h1>Come to the First Annual Sunday Sundae Triathlon!!</h1>
       <p>A choose your own adventure day with a sweet treat at the end!</p>
     </div>
-  {{> header}}
   </div>
 
 <div class='w-75 mx-auto'>
+<header class="navbar justify-content-center">
+  <h3>
+  {{> header}}
+  </h3>
+</header>
+
 
 {{{body}}}
 </div>
@@ -45,7 +50,7 @@
   <script src="/js/voting.js"></script>
   {{/if}}
 
- {{> footer}}
+ {{!-- {{> footer}} --}}
 
 </body>
 

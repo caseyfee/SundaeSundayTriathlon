@@ -8,8 +8,6 @@ class User extends Model {
   }
 }
 
-// update with T-shirt size, bike? run? swim? volutneer? 
-
 User.init(
   {
     id: {
@@ -35,34 +33,6 @@ User.init(
       allowNull: false,
       validate: {
         len: [8],
-      },
-    },
-    // tshirt: {
-    //   type: DataTypes.STRING,
-    //   allowNull: true,
-    //   },
-    // swim: {
-    //   type: DataTypes.BOOLEAN,
-    //   allowNull: true,
-    //   },
-    // bike: {
-    //   type: DataTypes.BOOLEAN,
-    //   allowNull: true,
-    //   },
-    // run: {
-    //   type: DataTypes.BOOLEAN,
-    //   allowNull: true,
-    //   },
-    // volunteer: {
-    //   type: DataTypes.BOOLEAN,
-    //   allowNull: true,
-      // },
-      // Add event ID here so the user can connect/choose one
-    event_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'event',
-        key: 'id',
       },
     },
   },

@@ -17,7 +17,6 @@ router.post('/', async (req, res) => {
 router.get("/", async(req,res)=>{
   try {
     const voteData = await Vote.findAll({},{
-      // want to incldue flav
       include: [
         {
           model: Flavor,

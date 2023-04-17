@@ -36,13 +36,16 @@
         <label for="password-signup">password:</label>
         <input class="form-input" type="password" id="password-signup" />
       </div>
-      
-      <select class="form-select" aria-label="Default select example" id="favorite">
-      <label for="password-signup">What part are you most excited for?</label>
-        {{#each events as |event|}}
-        <option value={{event.id}}>{{event.name}}</option>
-        {{/each}}
-      </select>
+
+      <div class="form-group">
+        <label for="favorite-event">What part are you most excited for?</label>
+        <select class="form-select" aria-label="Default select example" id="favorite">
+          {{#each events as |event|}}
+          <option value={{event.id}} id="favorite-event">{{event.name}}</option>
+          {{/each}}
+        </select>
+      </div>
+
       <div class="form-group">
         <button class="btn btn-primary" type="submit">signup</button>
       </div>

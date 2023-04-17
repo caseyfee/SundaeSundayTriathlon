@@ -2,7 +2,7 @@
 Come to the first annual Sundae Sunday Ice Cream Triathlon!! An adventure that ends in an ice cream sweet treat.
 
 ## Description 
-[SundaeSundayIceCream Link](https://sundaesunday.herokuapp.com/) <-Live link coming Soon
+[SundaeSundayIceCream Link](https://sundaesunday.herokuapp.com/)
 
 On this site, users will see all the information about the days events including the swimming, biking, and running routes for the day. The idea is that you can choose your own adventure and participate as much as you would like. This website was built using javascript, node, handlebars, MySQL2 and Sequelize packages to connect the Express.js API to a MySQL database that collects the users email, name, what event they are most excited by, and their favorite ice cream flavors. There are a few small animations sprinkled in as well, so enjoy looking around and hopefully see you at the event!
 

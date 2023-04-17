@@ -19,6 +19,7 @@ Vote.init(
                 key: 'id',
             },
         },
+<<<<<<< HEAD
         flavor_name: {
             type: DataTypes.STRING,
             references: {
@@ -29,6 +30,8 @@ Vote.init(
         flavor_count: {
             type: DataTypes.INTEGER,
         },
+=======
+>>>>>>> d007e0448b9e73a9bd89002c9ec20364a8d3813d
         user_id: {
             type: DataTypes.INTEGER,
             references: {

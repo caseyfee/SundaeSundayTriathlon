@@ -17,12 +17,6 @@ header, .project:not(:last-child) {
   text-decoration: underline;
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
-}
-
 * {
   /* height: 100%; */
   font-family: 'Lilita One', cursive;
@@ -41,7 +35,7 @@ header, .project:not(:last-child) {
 /* The hero image */
 .hero-image {
 /* Use "linear-gradient" to add a darken background effect to the image. This will make the text easier to read */
-background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/SundaeSundayTriathlon/imgs/alexander-grey-YaajxnfGeCk-unsplash.jpg");
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("sprinkles.jpg");
 /* Set a specific height */
 height: 33vh;
 /* Position and center the image to scale nicely on all screens */
@@ -89,4 +83,9 @@ border-radius: 15px;
 color: black;
 }
 
+.icon {
+  display: inline-block;
+  margin: 0 0.5rem;
 
+  animation-duration: 2s; /* don't forget to set a duration! */
+}

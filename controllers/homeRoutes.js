@@ -53,7 +53,11 @@ router.get('/event/:id', async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
+<<<<<<< HEAD
 router.get('/profile', withAuth, async (req, res) => {
+=======
+router.get('/homepage', withAuth, async (req, res) => {
+>>>>>>> d007e0448b9e73a9bd89002c9ec20364a8d3813d
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
@@ -63,7 +67,11 @@ router.get('/profile', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
+<<<<<<< HEAD
     res.render('profile', {
+=======
+    res.render('homepage', {
+>>>>>>> d007e0448b9e73a9bd89002c9ec20364a8d3813d
       ...user,
       logged_in: true
     });
@@ -74,6 +82,7 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
@@ -82,6 +91,31 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+=======
+router.get('/login', async(req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/homepage');
+    return;
+  }
+
+  const eventData = await Event.findAll({
+    include: [
+      {
+        model: User,
+        attributes: ['name'],
+      },
+    ],
+  });
+
+  // Serialize data so the template can read it
+  const events = eventData.map((event) => event.get({ plain: true }));
+
+
+  res.render('login', {
+    events
+  });
+>>>>>>> d007e0448b9e73a9bd89002c9ec20364a8d3813d
 });
 
 
@@ -116,6 +150,7 @@ router.get('/voting', async (req, res) => {
 
 });
 
+<<<<<<< HEAD
 // connection to registration page, work in progress
 router.get('/registration', (req, res) => {
   if (!req.session.logged_in) {
@@ -126,12 +161,18 @@ router.get('/registration', (req, res) => {
   res.render('registration');
 })
 // connection to participants page, work in progress
+=======
+// connection to participants page, work in progress
+// Code finds all events and maps that data, however due to model structure only able to assign
+//  one user to events
+>>>>>>> d007e0448b9e73a9bd89002c9ec20364a8d3813d
 router.get('/participants', async (req, res) => {
   if (!req.session.logged_in) {
     res.redirect('/login');
     return;
   }
 
+<<<<<<< HEAD
   const userData = await User.findAll();
 
   // Serialize data so the template can read it
@@ -147,3 +188,21 @@ router.get('/participants', async (req, res) => {
 })
 
 module.exports = router;
+=======
+  const eventData = await User.findAll({
+    include:[Event]
+  });
+  const events = eventData.map((event) => event.get({ plain: true }));
+  console.log(events);
+  // Serialize data so the template can read it
+  console.log(req.session);
+ 
+  // Pass serialized data and session flag into template
+  res.render('participants', { 
+    events, 
+    logged_in: req.session.logged_in 
+  });
+})
+
+module.exports = router;
+>>>>>>> d007e0448b9e73a9bd89002c9ec20364a8d3813d

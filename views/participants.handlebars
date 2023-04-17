@@ -1,10 +1,17 @@
+<<<<<<< HEAD
 <div class="row">
   <div class="col-auto">
     <h2>Welcome, {{name}}!</h2>
+=======
+<div class="row mx-auto">
+  <div>
+    <h2>Welcome!</h2>
+>>>>>>> d007e0448b9e73a9bd89002c9ec20364a8d3813d
   </div>
 </div>
 
 
+<<<<<<< HEAD
 <div class="col-md-6 container">
   <h2>Triathalon Participants:</h2>
 
@@ -23,6 +30,25 @@
       </p>
     </div>
   </div>
+=======
+<div class="col-md-6 mx-auto container">
+  <h2>Triathalon Participants:</h2>
+
+  {{#each events as |user|}}
+  
+  <div class="card mb-2">
+    <div class="card-body border border-3 border-warning warning-bg-subtle rounded">
+      <h4 class="card-title">
+        {{user.name}}
+      </h4>
+{{!-- double check events and user object array because calling model properties is currently not working --}}
+      <p class="card-text">
+      Has signed up for {{user.event.name}}!
+      </p>
+    </div>
+  </div>
+  
+>>>>>>> d007e0448b9e73a9bd89002c9ec20364a8d3813d
   {{/each}}
 </div>
 

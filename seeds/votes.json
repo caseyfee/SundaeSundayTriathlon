@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "flavor_name": "dairy-free",
         "flavor_count": 0
     },
@@ -41,6 +42,38 @@
     },
     {
         "flavor_name": "gummy bears",
+=======
+        "flavor_count": 0
+    },
+    {
+        "flavor_count": 0
+    },
+    {
+        "flavor_count": 0
+    },
+    {
+        "flavor_count": 0
+    },
+    {
+        "flavor_count": 0
+    },
+    {
+        "flavor_count": 0
+    },
+    {
+        "flavor_count": 0
+    },
+    {
+        "flavor_count": 0
+    },
+    {
+        "flavor_count": 0
+    },
+    {
+        "flavor_count": 0
+    },
+    {
+>>>>>>> d007e0448b9e73a9bd89002c9ec20364a8d3813d
         "flavor_count": 0
     }
 ]

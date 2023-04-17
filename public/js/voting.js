@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // const votingHandler = async (event) => {
 //   event.preventDefault();
 // // ADD SUBMIT BUTTON
@@ -32,6 +33,34 @@
 // }
 
 
+=======
+var chartLabels = ["dairy-free", "nut-free", "gluten-free", "chocolate", "vanilla", "strawberry", "chocolate sauce", "sprinkles", "peanuts", "berries", "gummy bears"]
+var votes = [1,4,6,8,9,0,5,4,3,7,2]
+
+
+const votingHandler = async (event) => {
+  event.preventDefault();
+
+  const flavorId = document.querySelector(".form-check-input").value;
+  const userId = document.querySelector('#user-input').value;
+
+  if (flavorId && userId) {
+    try {
+      const response = await fetch('/api/votes', {
+        method: 'POST',
+        body: JSON.stringify({ flavorId, userId }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      const newVote = await response.json();
+      console.log('New vote:', newVote);
+      updateChart(chartLabels, votes);
+    } catch (err) {
+      console.error(err);
+      alert('Failed to submit vote.');
+    }
+  }
+};
+>>>>>>> d007e0448b9e73a9bd89002c9ec20364a8d3813d
 
 function updateChart (labels, votes){
   new Chart("flavor-votes", {
@@ -41,7 +70,18 @@ function updateChart (labels, votes){
       labels: labels,
       datasets: [{
         data: votes,
+<<<<<<< HEAD
       }]
+=======
+      }],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)'
+      ],
+>>>>>>> d007e0448b9e73a9bd89002c9ec20364a8d3813d
     },
     options: {
       title: {
@@ -53,6 +93,7 @@ function updateChart (labels, votes){
 }
 
 
+<<<<<<< HEAD
 // const express = require('express');
 // const router = express.Router();
 
@@ -209,3 +250,6 @@ function updateChart (labels, votes){
 // //         voteLink.classList.remove("inprogress");
 // //     });
 // // });
+=======
+document.getElementById("submit-btn").addEventListener("click", votingHandler);
+>>>>>>> d007e0448b9e73a9bd89002c9ec20364a8d3813d

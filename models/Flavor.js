@@ -14,6 +14,7 @@ Flavor.init(
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+<<<<<<< HEAD
     }
     // ,
     // user_id: {
@@ -23,6 +24,27 @@ Flavor.init(
     //       key: 'id',
     //   },
     // }
+=======
+    },
+    flavor_count: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+          model: 'user',
+          key: 'id',
+      },
+    },
+    vote_id: {
+      type: DataTypes.INTEGER,
+      references: {
+          model: 'vote',
+          key: 'id',
+      },
+    }
+>>>>>>> d007e0448b9e73a9bd89002c9ec20364a8d3813d
   },
     {
         sequelize,
@@ -33,4 +55,9 @@ Flavor.init(
       }
     );
     
+<<<<<<< HEAD
     module.exports = Flavor;
+=======
+    module.exports = Flavor;
+    
+>>>>>>> d007e0448b9e73a9bd89002c9ec20364a8d3813d

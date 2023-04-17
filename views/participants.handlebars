@@ -1,16 +1,16 @@
-<div class="row">
-  <div class="col-auto">
+<div class="row mx-auto">
+  <div>
     <h2>Welcome!</h2>
   </div>
 </div>
 
 
-<div class="col-md-6 container">
+<div class="col-md-6 mx-auto container">
   <h2>Triathalon Participants:</h2>
 
   {{#each events as |event|}}
   <div class="card mb-2">
-    <div class="card-body col-md-8 border border-3 border-warning rounded">
+    <div class="card-body border border-3 border-warning warning-bg-subtle rounded">
       <h4 class="card-title">
         {{event.user.name}}
       </h4>

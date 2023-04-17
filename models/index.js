@@ -3,14 +3,13 @@ const Event = require('./Event');
 const Flavor = require ('./Flavor');
 const Vote = require ('./Votes');
 
-User.hasMany(Event, {
-  foreignKey: 'user_id'
+Event.hasMany(User, {
+  foreignKey: 'event_id'
 });
 
-Event.belongsTo(User, {
-  foreignKey: 'user_id'
+User.belongsTo(Event, {
+  foreignKey: 'event_id'
 });
-
 
 // Connects flavors/voting/users
 User.belongsToMany(Flavor, {
@@ -21,7 +20,7 @@ User.belongsToMany(Flavor, {
 // Flavor belongToMany Vote (through Vote)
 Flavor.belongsToMany(User, {
   through: Vote,
-  foreignKey: 'flavor_id',
+  foreignKey: 'user_id',
 })
 
 // Flavor.hasMany(Vote, {

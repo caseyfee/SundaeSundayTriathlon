@@ -74,14 +74,29 @@ router.get('/homepage', withAuth, async (req, res) => {
   }
 });
 
-router.get('/login', (req, res) => {
+router.get('/login', async(req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/homepage');
     return;
   }
 
-  res.render('login');
+  const eventData = await Event.findAll({
+    include: [
+      {
+        model: User,
+        attributes: ['name'],
+      },
+    ],
+  });
+
+  // Serialize data so the template can read it
+  const events = eventData.map((event) => event.get({ plain: true }));
+
+
+  res.render('login', {
+    events
+  });
 });
 
 
@@ -125,8 +140,8 @@ router.get('/participants', async (req, res) => {
     return;
   }
 
-  const eventData = await Event.findAll({
-    include:[User]
+  const eventData = await User.findAll({
+    include:[Event]
   });
   const events = eventData.map((event) => event.get({ plain: true }));
   console.log(events);

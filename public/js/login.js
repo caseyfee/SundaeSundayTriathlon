@@ -15,8 +15,9 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      // If successful, redirect the browser to the home page
-      document.location.replace('/homepage');
+      // If successful, redirect the browser to the profile page
+      document.location.replace('/');
+
     } else {
       alert(response.statusText);
     }
@@ -29,21 +30,23 @@ const signupFormHandler = async (event) => {
   const name = document.querySelector('#name-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
+  const favoriteEvent = document.querySelector('#favorite').value.trim();
   // const tshirt = document.querySelector('#tshirt-signup').value.trim();
   // const swim = document.querySelector('#swim-signup').value.trim();
   // const bike = document.querySelector('#bike-signup').value.trim();
   // const run = document.querySelector('#run-signup').value.trim();
   // const volunteer = document.querySelector('#volunteer-signup').value.trim();
 
-  if (name && email && password) {
+  if (name && email && password && favoriteEvent) {
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ name, email, password, event_id: favoriteEvent }),
       headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
-      document.location.replace('/homepage');
+      document.location.replace('/');
+
     } else {
       alert(response.statusText);
     }

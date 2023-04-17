@@ -20,7 +20,7 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/');
     } else {
       alert('Failed to update profile');
     }
@@ -36,7 +36,7 @@ const delButtonHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/');
     } else {
       alert('Failed to delete event');
     }

@@ -3,8 +3,8 @@
 
 <head>
   <title>Vote for your favorite item</title>
-  <script type="module" src="/js/voting.js"></script>
-
+  {{!-- type="module" used to be in line below --}}
+  
 </head>
 
 <body>
@@ -21,7 +21,7 @@
             </label>
           </div>
           {{/each}}
-          <button class="btn btn-primary">Submit!</button>
+          <button class="btn btn-primary " id="submit-btn">Submit!</button>
 
         </form>
       </div>
@@ -33,7 +33,7 @@
 
   </div>
 
-  <script src="/js/voting.js" type="module"></script>
+  {{!-- <script src="/js/voting.js" type="module"></script> --}}
 </body>
 
 </html>

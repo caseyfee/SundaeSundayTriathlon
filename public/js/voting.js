@@ -1,47 +1,6 @@
+var chartLabels = ["dairy-free", "nut-free", "gluten-free", "chocolate", "vanilla", "strawberry", "chocolate sauce", "sprinkles", "peanuts", "berries", "gummy bears"]
+var votes = [1,4,6,8,9,0,5,4,3,7,2]
 
-// import { flavors } from './seeds/flavors.js';
-// import { votes } from './seeds/votes.js';
-
-
-// const labels = require('seeds/flavors.js');
-// const votes = require('seeds/votes.js');
-// document.getElementById("submit-btn").addEventListener("click", votingHandler);
-
-// // console.log(labels);
-
-// const votingHandler = async (event) => {
-//   event.preventDefault();
-
-//   const flavorId = document.querySelector({id}).value;
-//   const userId = document.querySelector('#user-input').value;
-
-//   if (flavorId && userId) {
-//     try {
-//       const response = await fetch('/api/votes', {
-//         method: 'POST',
-//         body: JSON.stringify({ flavorId, userId }),
-//         headers: { 'Content-Type': 'application/json' },
-//       });
-//       const newVote = await response.json();
-//       console.log('New vote:', newVote);
-//       updateChart(labels, votes);
-//     } catch (err) {
-//       console.error(err);
-//       alert('Failed to submit vote.');
-//     }
-//   }
-// };
-
-// import { createChart } from 'https://cdn.jsdelivr.net/npm/chart.js@3.5.0/dist/chart.esm.min.js';
-import { flavors } from './flavors.js';
-import { votes } from './votes.js';
-
-// const labels = require('seeds/flavors.js');
-// const votes = require('seeds/votes.js');
-// document.getElementById("submit-btn").addEventListener("click", votingHandler);
-
-
-document.getElementById("submit-btn").addEventListener("click", votingHandler);
 
 const votingHandler = async (event) => {
   event.preventDefault();
@@ -58,7 +17,7 @@ const votingHandler = async (event) => {
       });
       const newVote = await response.json();
       console.log('New vote:', newVote);
-      updateChart(flavors, votes);
+      updateChart(chartLabels, votes);
     } catch (err) {
       console.error(err);
       alert('Failed to submit vote.');
@@ -92,3 +51,5 @@ function updateChart (labels, votes){
   });
 }
 
+
+document.getElementById("submit-btn").addEventListener("click", votingHandler);

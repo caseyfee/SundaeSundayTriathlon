@@ -117,7 +117,6 @@ router.get('/voting', async (req, res) => {
 });
 
 // connection to participants page, work in progress
-
 // Code finds all events and maps that data, however due to model structure only able to assign
 //  one user to events
 router.get('/participants', async (req, res) => {

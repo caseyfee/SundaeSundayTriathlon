@@ -8,8 +8,6 @@ class User extends Model {
   }
 }
 
-// update with T-shirt size, bike? run? swim? volutneer? 
-
 User.init(
   {
     id: {

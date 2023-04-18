@@ -38,8 +38,7 @@ function updateChart (labels, votes){
       labels: labels,
       datasets: [{
         data: votes,
-      }],
-      backgroundColor: [
+        backgroundColor: [
           "#b91d47",
           "#00aba9",
           "#2b5797",
@@ -52,6 +51,8 @@ function updateChart (labels, votes){
           "#ffffff",
           "#000000"
       ],
+      }],
+      
     },
     options: {
       title: {

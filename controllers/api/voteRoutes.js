@@ -18,6 +18,7 @@ router.get("/", async(req,res)=>{
   try {
     const voteData = await Vote.findAll({},{
       include: [
+        // want want to use the 'through' here?
         {
           model: Flavor,
           attributes: ['name']
@@ -26,6 +27,7 @@ router.get("/", async(req,res)=>{
     });
 
     const votes = voteData.map((vote) => vote.get({plain:true}))
+    console.log(votes);
   } catch (err) {
     console.log(err);
     res.status(500).json(err)
